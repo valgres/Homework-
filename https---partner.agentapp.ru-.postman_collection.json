@@ -1,0 +1,324 @@
+{
+	"info": {
+		"_postman_id": "6c4e8da3-5bb4-4fa9-ba72-062742f3c0ae",
+		"name": "https://partner.agentapp.ru/",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "token2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"qa@qa.qa\",\r\n    \"password\": \"111\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{http_schema}}://{{host}}/{{api_version}}/users/obtain-token",
+					"protocol": "{{http_schema}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{api_version}}",
+						"users",
+						"obtain-token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание водителя",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"first_name\": \"Вал\",\r\n  \"last_name\": \"Грес\",\r\n  \"patronymic\": \"Алексеевич\",\r\n  \"birth_date\": \"1993-01-01\",\r\n  \"driving_experience_started\": \"2012-02-10\",\r\n  \"driver_licenses\": [\r\n    {\r\n      \"credential_type\": \"DRIVER_LICENSE\",\r\n      \"number\": \"123456\",\r\n      \"series\": \"7890\",\r\n      \"issue_date\": \"2012-02-10\"\r\n    }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{http_schema}}://{{host}}/{{api_version}}/insured_objects/drivers",
+					"protocol": "{{http_schema}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{api_version}}",
+						"insured_objects",
+						"drivers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание собственника",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"last_name\": \"Семен\",\r\n    \"first_name\": \"Иван\",\r\n    \"patronymic\": \"Иванович\",\r\n    \"birth_date\": \"1974-03-23\",\r\n    \"contact\": [\r\n        {\r\n            \"contact_type\": \"PHONE\",\r\n            \"data\": \"+7 (904) 940-58-26\"\r\n        },\r\n        {\r\n            \"contact_type\": \"EMAIL\",\r\n            \"data\": \"12345@mail.ru\"\r\n        }],\r\n    \"credential\": [\r\n            {\r\n                \"credential_type\": \"RUSSIAN_INTERNAL_PASSPORT\",\r\n                \"issue_date\": \"2017-03-08\",\r\n                \"issue_point\": \"УФМС\",\r\n                \"issue_point_code\": \"453-777\",\r\n                \"number\": \"789999\",\r\n                \"series\": \"7407\"\r\n            }\r\n        ],\r\n        \"address\": [\r\n            {\r\n                \"address_query\": \"г Москва, ул Горького, д 4 к 4, кв 5\",\r\n                \"address_type\": \"LEGAL_ADDRESS\",\r\n                \"region_kladr_id\": \"7700000000000\",\r\n                \"city_kladr_id\": \"7700000600000\"\r\n            },\r\n            {\r\n                \"address_query\": \"г Москва, ул Горького, д 4 к 4, кв 5\",\r\n                \"address_type\": \"ACTUAL_ADDRESS\",\r\n                \"region_kladr_id\": \"7700000000000\",\r\n                \"city_kladr_id\": \"7700000600000\"\r\n            }\r\n        ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{http_schema}}://{{host}}/{{api_version}}/insured_objects/owners/natural_persons",
+					"protocol": "{{http_schema}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{api_version}}",
+						"insured_objects",
+						"owners",
+						"natural_persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание страхователя",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"last_name\": \"Семен\",\r\n    \"first_name\": \"Ив\",\r\n    \"patronymic\": \"Ан\",\r\n    \"birth_date\": \"1974-03-23\",\r\n    \"contact\": [\r\n        {\r\n            \"contact_type\": \"PHONE\",\r\n            \"data\": \"+7 (904) 940-58-26\"\r\n        },\r\n        {\r\n            \"contact_type\": \"EMAIL\",\r\n            \"data\": \"12345@mail.ru\"\r\n        }],\r\n  \"credential\": [\r\n            {\r\n                \"credential_type\": \"RUSSIAN_INTERNAL_PASSPORT\",\r\n                \"issue_date\": \"2017-03-08\",\r\n                \"issue_point\": \"УФМС\",\r\n                \"issue_point_code\": \"453-777\",\r\n                \"number\": \"789999\",\r\n                \"series\": \"7407\"\r\n            }\r\n        ],\r\n        \"address\": [\r\n            {\r\n                \"address_query\": \"г Москва, ул Горького, д 4 к 4, кв 5\",\r\n                \"address_type\": \"LEGAL_ADDRESS\",\r\n                \"region_kladr_id\": \"7700000000000\",\r\n                \"city_kladr_id\": \"7700000600000\"\r\n            },\r\n            {\r\n                \"address_query\": \"г Москва, ул Горького, д 4 к 4, кв 5\",\r\n                \"address_type\": \"ACTUAL_ADDRESS\",\r\n                \"region_kladr_id\": \"7700000000000\",\r\n                \"city_kladr_id\": \"7700000600000\"\r\n            }\r\n        ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{http_schema}}://{{host}}/{{api_version}}/insured_objects/owners/natural_persons",
+					"protocol": "{{http_schema}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{api_version}}",
+						"insured_objects",
+						"owners",
+						"natural_persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание автомобиля",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"car_model_id\": 864026180,\r\n  \"engine_power\": 211,\r\n  \"vin_number\": \"WAUZZZ8T4BA055551\",\r\n  \"number_plate\": \"В904МА200\",\r\n  \"manufacturing_year\": 2020,\r\n  \"max_mass\": null,\r\n  \"credential\": [\r\n    {\r\n      \"credential_type\": \"VEHICLE_REGISTRATION\",\r\n      \"issue_date\": \"2020-07-08\",\r\n      \"number\": \"777666\",\r\n      \"series\": \"74ОО\"\r\n    }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{http_schema}}://{{host}}/v3/insured_objects/cars",
+					"protocol": "{{http_schema}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v3",
+						"insured_objects",
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Объединение субъектов и объектов страхования в одну сущность “объект страхования",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"drivers\": [\r\n        \"58c45fa8-7b8a-4f6e-a31b-f209f9eeee84\"\r\n    ],\r\n    \"owner\": \"c7c1cb36-4a3f-48e1-af40-fc837e6a6da8\",\r\n    \"car\": \"02eade7d-6ce9-43a4-a498-ba0c1012f301\",\r\n    \"insurant\": \"71f461ee-2554-40e3-b7c2-bfef23e0d07f\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{http_schema}}://{{host}}/{{api_version}}/insured_objects/",
+					"protocol": "{{http_schema}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{api_version}}",
+						"insured_objects",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание договора",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"4a8c7404-339e-4c77-b53d-8b4a78323649\",\r\n    \"valid_from\": \"2022-02-19\",\r\n    \"valid_to\": \"2023-02-18\",\r\n    \"insurance_period\": 8,\r\n    \"target_of_using\" : 11,\r\n    \"drivers_ids\": [\r\n        \"58c45fa8-7b8a-4f6e-a31b-f209f9eeee84\"\r\n    ],\r\n    \"is_car_without_registration\": false,\r\n    \"engine_power\": 211.0,\r\n    \"has_car_trailer\": false,\r\n    \"car_type\": \"B\",\r\n    \"owner_registration\": {\"address_query\": \"г Москва, ул Горького, д 4 к 4, кв 5\"},\r\n    \"periods\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{http_schema}}://{{host}}/v3/agreements/calculations",
+					"protocol": "{{http_schema}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v3",
+						"agreements",
+						"calculations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Обновление Договора",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"insured_object\": \"dac2092c-f0db-4d76-972f-159af3729eb8\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{http_schema}}://{{host}}/{{api_version}}/agreements/{{agreement_id}}",
+					"protocol": "{{http_schema}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{api_version}}",
+						"agreements",
+						"{{agreement_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение полного расчёт по СК",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"agreement_id\" : \"ce5b79be-68b4-45e1-8715-616f7de2205d\",\r\n\"ins_company_code\" : \"ZETTA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{http_schema}}://{{host}}/{{api_version}}/agreements/{{agreement_id}}/results/RENAISSANCE",
+					"protocol": "{{http_schema}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{api_version}}",
+						"agreements",
+						"{{agreement_id}}",
+						"results",
+						"RENAISSANCE"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "Token a3f1f7e29076fc6ecc4f3b49c7ee8e71c605a37c",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Content-type",
+			"value": "application/json",
+			"type": "string"
+		},
+		{
+			"key": "Accept",
+			"value": "application/json",
+			"type": "string"
+		}
+	]
+}
