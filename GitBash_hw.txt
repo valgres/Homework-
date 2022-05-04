@@ -1,0 +1,44 @@
+1) $ pwd
+2,4) $ mkdir qa1
+$ mkdir qa2
+$ mkdir qa3
+3,5) $ cd qa1
+$ cd ~/Documents/
+$ cd qa2
+6 )$ touch qa1.txt
+$ touch {qa2.txt,qa3.txt}
+$ touch {qa2.txt,qa3.txt}
+$ touch {qa4.json,qa5.json}
+7) $ mkdir -p {qa4,qa5,qa6}
+8) $ ls -la
+9,10,11) $ vim qa1.txt
+i
+1111
+2222
+3333
+:wq
+12) $ cd ..
+13) $ mv qa2/qa1.txt qa1/qa1.txt
+$ mv qa2/qa2.txt qa1/qa2.txt
+14) $ cp qa2/qa1.txt qa1/qa1.txt
+$ cp qa2/qa2.txt qa1/qa2.txt
+15) $ find qa5/qa2.txt
+16) $ tail -p qa3.txt
+17) $ head -2 qa2.txt
+18) $ tail -2 qa2.txt
+19) $ less qa2.txt
+20) $ date
+
+curl http://162.55.220.72:5005/terminal-hw-request
+$ curl -X POST http://162.55.220.72:5005/get_method? --data "name=val" -- data "age =28"
+
+#!/bin/bash
+cd ~/Documents/
+mkdir -p {qa8,qa99,qa55}
+cd ~/Documents/
+touch {qa777.txt,qa77.txt,qa7.txt}
+touch {qa8.json,qa9.json}
+mkdir -p {qa88,qa77,qa66}
+ls -la
+mv qa777.txt qa8/qa777.txt
+mv qa7.txt qa99/qa7.txt
